@@ -1,0 +1,30 @@
+{%extends 'base.html'%}
+
+{%block main_block%}
+
+{%if messages%}
+{%for m in messages%}
+<div class="w-50 mx-auto">
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>{{m}}</strong> 
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+</div>
+{%endfor%}
+{%endif%}
+
+        <div class="container p-3">
+            <div class="row">
+                <div class="col-4 mx-auto border border-3">
+                    <form action="" method="post">
+                        {%csrf_token%}
+            
+                        {{form}}
+            
+                        <button class="my-3" type="submit">SignIn</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    {%endblock%}
+   
